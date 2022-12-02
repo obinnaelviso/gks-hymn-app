@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Theocratic Songs of Praise (GKS HYMN)',
         theme: ThemeData(
-          primarySwatch: createMaterialColor(Colors.black),
+          primarySwatch: createMaterialColor(Colors.white60),
         ),
         initialRoute: SplashScreen.route,
         routes: {

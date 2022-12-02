@@ -18,6 +18,7 @@ class _HymnsScreenState extends State<HymnsScreen> {
   List<Hymn> filteredHymns = [];
   Hymn? currentHymn;
   PageController pageController = PageController();
+  FontSize pageFontSize = FontSize.medium;
   @override
   void initState() {
     super.initState();
@@ -112,9 +113,42 @@ class _HymnsScreenState extends State<HymnsScreen> {
                           child: Text("No result found for search"),
                         );
                       } else {
-                        return SingleChildScrollView(
-                          child: Html(
-                            data: hymn.body,
+                        return GestureDetector(
+                          onDoubleTap: () {
+                            if (pageFontSize == FontSize.medium) {
+                              setState(() {
+                                pageFontSize = FontSize.larger;
+                              });
+                            } else {
+                              setState(() {
+                                pageFontSize = FontSize.medium;
+                              });
+                            }
+                          },
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              Text(
+                                hymn.hymnNo,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16.0,
+                                ),
+                              ),
+                              Expanded(
+                                child: SingleChildScrollView(
+                                  child: Html(data: hymn.body, style: {
+                                    "p": Style(fontSize: pageFontSize),
+                                    "li": Style(
+                                      fontSize: pageFontSize,
+                                      margin: const EdgeInsets.only(
+                                        top: 10.0,
+                                      ),
+                                    ),
+                                  }),
+                                ),
+                              ),
+                            ],
                           ),
                         );
                       }
