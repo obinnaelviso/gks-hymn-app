@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gks_hymn/views/preface_screen.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({super.key});
 
   static const route = "/splash";
 
@@ -14,9 +14,10 @@ class _SplashScreenState extends State<SplashScreen> {
   void exitSplash() async {
     await Future.delayed(const Duration(
       milliseconds: 3000,
-    )).whenComplete(() async {
+    ));
+    if (mounted) {
       Navigator.pushReplacementNamed(context, PrefaceScreen.route);
-    });
+    }
   }
 
   @override

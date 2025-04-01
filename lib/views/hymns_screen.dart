@@ -4,7 +4,7 @@ import 'package:gks_hymn/helpers/database_helper.dart';
 import 'package:gks_hymn/models/hymn.dart';
 
 class HymnsScreen extends StatefulWidget {
-  const HymnsScreen({Key? key}) : super(key: key);
+  const HymnsScreen({super.key});
 
   static const route = "/hymns";
 
@@ -141,7 +141,7 @@ class _HymnsScreenState extends State<HymnsScreen> {
                                     "p": Style(fontSize: pageFontSize),
                                     "li": Style(
                                       fontSize: pageFontSize,
-                                      margin: const EdgeInsets.only(
+                                      margin: Margins.only(
                                         top: 10.0,
                                       ),
                                     ),

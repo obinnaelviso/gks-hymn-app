@@ -5,7 +5,7 @@ import 'package:gks_hymn/models/config.dart';
 import 'package:gks_hymn/views/hymns_screen.dart';
 
 class PrefaceScreen extends StatelessWidget {
-  const PrefaceScreen({Key? key}) : super(key: key);
+  const PrefaceScreen({super.key});
 
   static const route = "/preface";
 
@@ -29,7 +29,6 @@ class PrefaceScreen extends StatelessWidget {
                   Html(data: snapshot.data?.value),
                   ElevatedButton(
                     onPressed: () {
-                      print('hymns screen');
                       Navigator.pushReplacementNamed(
                           context, HymnsScreen.route);
                     },
