@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.techzoidinnovation.gks_hymn">
+    package="com.techzoidinnovation.gkshymn">
    <application
         android:label="Theocratic Songs Of Praise (GKS Hymn)"
         android:name="${applicationName}"

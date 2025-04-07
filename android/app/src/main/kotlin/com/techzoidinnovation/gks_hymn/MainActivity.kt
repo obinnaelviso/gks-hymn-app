@@ -1,4 +1,4 @@
-package com.techzoidinnovation.gks_hymn
+package com.techzoidinnovation.gkshymn
 
 import io.flutter.embedding.android.FlutterActivity
 
